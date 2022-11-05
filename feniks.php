@@ -26,7 +26,7 @@ $screenHeight=3;
 $symbolsChance=[];
 foreach ($symbolsChancesValues as [$symbol,$chance,$value]){
     for ($i=1;$i<=$chance;$i++){
-        array_push($symbolsChance, $symbol[0]);
+        array_push($symbolsChance, $symbol);
     }
 }//create array with symbols (bigger chance -> more symbols in array)
 
