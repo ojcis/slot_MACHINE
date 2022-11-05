@@ -20,18 +20,23 @@ $lines=[
     [[2,0],[1,1],[1,2],[1,3],[0,4]]
 ];//wining line
 
+$screenWidth=5;
+$screenHeight=3;
+
 $symbolsChance=[];
 foreach ($symbolsChancesValues as [$symbol,$chance,$value]){
     for ($i=1;$i<=$chance;$i++){
         array_push($symbolsChance, $symbol[0]);
     }
-}
+}//create array with symbols (bigger chance -> more symbols in array)
+
 ADD_MONEY:
 $money=readline('Insert your money: $');
 START:
 $money=$money-1;
-for ($i=0;$i<3;$i++) {
-    for ($j=0;$j<5;$j++) {
+
+for ($i=0;$i<$screenHeight;$i++) {
+    for ($j=0;$j<$screenWidth;$j++) {
         $screen[$i][$j] = $symbolsChance[array_rand($symbolsChance)];
     }
 }//create screen
